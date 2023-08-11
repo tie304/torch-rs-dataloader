@@ -1,26 +1,15 @@
-
-
-
-//make sure to use pytoch 2.0
+//make sure to use pytorch 2.0
 //export LD_LIBRARY_PATH=/path/to/your/libtorch/lib
 
+use anyhow::{Ok, Result};
 
-use anyhow::{Result, Ok};
-
-
-
-mod mnist;
+mod augmentation_pipeline;
 mod cats_dogs;
 mod dataloader;
-
-const IMAGE_DIM: i64 = 784;
-const HIDDEN_NODES: i64 = 128;
-const LABELS: i64 = 10;
-const EPOCHS: i32 = 10;
-
+mod transform_pipeline;
+mod utils;
 
 fn main() -> Result<()> {
-   // mnist::run(EPOCHS)?;
-   cats_dogs::run()?;
+    cats_dogs::run()?;
     Ok(())
 }

@@ -1,1 +1,7 @@
 /target
+test/
+train/
+libgpu
+libtorch
+.vscode
+**.zip
